@@ -1,0 +1,14 @@
+.category-title {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lighten(#282c34, 20%);
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.category-title__text {
+  color: inherit;
+  font-weight: 500;
+}

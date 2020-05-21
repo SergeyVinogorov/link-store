@@ -8,10 +8,10 @@ export default function AppLink({ title, currentLink }) {
       href={currentLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="app-link__container"
+      className="app-link__container app-hover"
     >
       <p className="app-link__title">{title}</p>
-      <p className="App-link">{currentLink}</p>
+      <p className="app-link">{currentLink}</p>
     </a>
   );
 }

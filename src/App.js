@@ -1,14 +1,15 @@
 import React from "react";
-
-import "./App.css";
-import LinksContainer from "./components/LinksContainer";
+import "./App.scss";
+import LinksContainer from "./components/AppButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <LinksContainer />
-      </header>
+    <div className="app">
+      <main className="app-main">
+        <div className="app-main__content">
+          <LinksContainer />
+        </div>
+      </main>
     </div>
   );
 }

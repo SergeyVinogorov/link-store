@@ -2,23 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import { uuid } from "../util";
 //components
-import AppLink from "./AppLink";
+import CategoryItem from "./CategoryItem";
 //styles
-import "./styles/LinksContainer.scss";
-export default function LinksContainer({ arrayLinks }) {
-  const links = arrayLinks.map((el) => {
+import "./styles/CategoryContainer.scss";
+
+export default function CategoryContainer({ arrayCategories, changeCategory }) {
+  const categories = arrayCategories.map((el) => {
     return (
-      <AppLink title={el.title} currentLink={el.currentLink} key={uuid()} />
+      <CategoryItem
+        categoryTitle={el.title}
+        changeCategory={changeCategory}
+        key={uuid()}
+      />
     );
   });
-  return <div className="container-links">{links}</div>;
+  return <div className="category-wrapper">{categories}</div>;
 }
-LinksContainer.propTypes = {
-  arrayLinks: PropTypes.array.isRequired,
+CategoryContainer.propTypes = {
+  arrayCategories: PropTypes.array.isRequired,
+  changeCategory: PropTypes.func.isRequired,
 };
 
-LinksContainer.defaultProps = {
-  arrayLinks: [
+CategoryContainer.defaultProps = {
+  arrayCategories: [
     {
       title: "Диджитал Сектор",
       currentLink: "http://digital-sector.ru/",
@@ -45,4 +51,7 @@ LinksContainer.defaultProps = {
       groupLink: "main",
     },
   ],
+  changeCategory: (title) => {
+    console.log(title + " yes");
+  },
 };
