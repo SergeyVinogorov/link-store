@@ -20,29 +20,24 @@ LinksContainer.propTypes = {
 LinksContainer.defaultProps = {
   arrayLinks: [
     {
-      title: "Диджитал Сектор",
-      currentLink: "http://digital-sector.ru/",
-      groupLink: "main",
+      name: "Frontend",
+      links: [
+        {
+          id: uuid(),
+          title: "React",
+          currentLink: "https://reactjs.org/",
+        },
+      ],
     },
     {
-      title: "Диджитал Сектор",
-      currentLink: "http://digital-sector.ru/",
-      groupLink: "main",
-    },
-    {
-      title: "Диджитал Сектор",
-      currentLink: "http://digital-sector.ru/",
-      groupLink: "main",
-    },
-    {
-      title: "Диджитал Сектор",
-      currentLink: "http://digital-sector.ru/",
-      groupLink: "main",
-    },
-    {
-      title: "Диджитал Сектор",
-      currentLink: "http://digital-sector.ru/",
-      groupLink: "main",
+      name: "Backend",
+      links: [
+        {
+          id: uuid(),
+          title: "Oracle",
+          currentLink: "https://www.oracle.com/index.html",
+        },
+      ],
     },
   ],
 };

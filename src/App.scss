@@ -30,7 +30,7 @@
   }
 }
 .app-active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 //styles for input
 .app-input-wrapper {
@@ -61,6 +61,14 @@
 .app-input-title--isForm {
   margin-left: 12px;
 }
+.app-btn {
+  padding: 1em;
+  margin: 1em;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: lighten(#0f3b32, 10%);
+  color: inherit;
+}
 .app-form {
   background-color: darken(#282c34, 10%);
   border-radius: 12px;
@@ -71,4 +79,16 @@
   box-sizing: border-box;
   width: 100%;
   flex-direction: column;
+  margin: 0 auto;
+}
+.app-form__header {
+  margin: 0.5em 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+.app-container-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
 }

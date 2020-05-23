@@ -3,10 +3,14 @@ import PropTypes from "prop-types";
 //styles
 import "./styles/CategoryItem.scss";
 
-export default function CategoryItem({ categoryTitle, changeCategory }) {
+export default function CategoryItem({
+  categoryTitle,
+  changeCategory,
+  isActive,
+}) {
   return (
     <div
-      className="category-title app-hover"
+      className={`category-title app-hover ${isActive ? "app-active" : ""}`}
       onClick={() => changeCategory(categoryTitle)}
     >
       <p className="category-title__text">{categoryTitle}</p>

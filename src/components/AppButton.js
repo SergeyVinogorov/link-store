@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-//styles
-import "./styles/AppButton.scss";
 
 export default function AppButton({ openModal, btnTitle }) {
   return (

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withOverlay from "./Overlay";
 //components
 import AppButton from "./AppButton";
 import AppInput from "./AppInput";
 import CategorySelect from "./CategorySelect";
 
-export default function AppForm({ isCreate }) {
+const AppForm = ({ isCreate }) => {
   const [nameInput, setNameInput] = useState("");
   const [link, setLink] = useState("");
   const [category, setCategory] = useState("");
@@ -39,6 +40,7 @@ export default function AppForm({ isCreate }) {
   ];
   return (
     <form className="app-form">
+      <p className="app-form__header">{`${nameId} link`}</p>
       <AppInput
         appInputValue={nameInput}
         appInputChange={(event) => {
@@ -71,7 +73,7 @@ export default function AppForm({ isCreate }) {
       <AppButton btnTitle={nameId} />
     </form>
   );
-}
+};
 AppForm.propTypes = {
   isCreate: PropTypes.bool,
 };
@@ -79,3 +81,4 @@ AppForm.propTypes = {
 AppForm.defaultProps = {
   isCreate: true,
 };
+export default withOverlay(AppForm);
