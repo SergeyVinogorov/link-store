@@ -5,22 +5,16 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { throttle } from "lodash";
-import defaultLinks from "./defaultLinks";
 import reducer from "./store/reducer";
 import { loadState, saveState } from "./util";
-const defaultState = defaultLinks;
-localStorage.setItem("links", JSON.stringify(defaultState));
 
 const persistedState = loadState();
 const store = createStore(reducer, persistedState);
-store.subscribe(
-  throttle(() => {
-    saveState({
-      links: store.getState().links,
-    });
-  }, 1000)
-);
+store.subscribe(() => {
+  saveState({
+    links: store.getState().links,
+  });
+});
 
 ReactDOM.render(
   <React.StrictMode>

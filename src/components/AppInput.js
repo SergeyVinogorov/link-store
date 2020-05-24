@@ -27,6 +27,7 @@ export default function AppInput({
         id={appInputName}
         value={appInputValue}
         onChange={appInputChange}
+        onKeyUp={appInputChange}
         placeholder={appInputPlaceholder}
         className="app-input"
       />

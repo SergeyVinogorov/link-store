@@ -11,8 +11,8 @@ export default function CategorySelect({
 }) {
   const options = arrayCategory.map((el) => {
     return (
-      <option value={el.groupLink} key={uuid()}>
-        {el.groupLink}
+      <option value={el.name} key={uuid()}>
+        {el.name}
       </option>
     );
   });

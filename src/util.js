@@ -7,6 +7,7 @@ export function uuid() {
 export function elipseText(input, length) {
   return elipsize(input, length);
 }
+// for localStorage
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem("links");
@@ -25,4 +26,17 @@ export const saveState = (state) => {
   } catch {
     // ignore write errors
   }
+};
+export const getAllLinks = (category) => {
+  let result = [];
+  category.forEach((el) => {
+    el.links.forEach((link) => result.push(link));
+  });
+  return result;
+};
+export const filterBySearch = (arr, search) => {
+  const result = arr.filter((linkName) => {
+    return linkName.title.toLowerCase().includes(search.toLowerCase());
+  });
+  return result;
 };
